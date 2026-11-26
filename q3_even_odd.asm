@@ -1,0 +1,24 @@
+;Name:mostafa nasser sayed mohamed
+;ID:2025002206
+;Section:3
+;Q3-Count even and odd numbers
+
+LDA 2500H
+MOV C,A
+LXI H,2501H
+MVI B,00H
+MVI D,00H
+LOOP: MOV A,M
+ANI 01H
+JNZ ODD
+INR B
+JMP NEXT
+ODD: INR D
+NEXT: INX H
+DCR C
+JNZ LOOP
+MOV A,B
+STA 2600H
+MOV A,D
+STA 2601H
+HLT
